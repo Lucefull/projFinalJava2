@@ -1,0 +1,58 @@
+create database concessionaria;
+
+use concessionaria;
+
+create table carro(
+idcarro bigint auto_increment,
+marca varchar (50) not null,
+modelo varchar (50) not null,
+cambio varchar (10) not null,
+ano int not null,
+placa varchar (10) not null,
+cor varchar (20) not null,
+valor double not null,
+primary key(idcarro));
+
+insert into carro(idcarro, marca, modelo,cambio,ano,placa,cor,valor)
+values(null,"Honda", "Civic","Automatico",2011,"xxx-6969","preto",44990),
+(null,"Mitsubishi", "Lancer","CVT",2012,"exe-0831","Vermelho",46000),
+(null,"Kia", "Cerato","Automatico",2013,"ite-2410","Branco",35000),
+(null,"Nisan", "Versa","Manual",2018,"yvt-0022","Azul",50000),
+(null,"BMW", "X6","Automatico",2017,"vmf-0001","Branco",500000);
+
+create table cliente(
+idcliente bigint auto_increment,
+nome varchar (50) not null,
+endereço varchar (50) not null,
+rg varchar (20) not null,
+nascimento varchar (10) not null,
+email varchar (50) not null,
+telefone int not null,
+primary key(idcliente));
+
+insert into cliente(idcliente, nome, endereço,rg,nascimento,email,telefone)
+values(null,"Kid Bengala", "Av. brasileirinhas 100","696969","20/09/1985","kid@gmail.com",69696969),
+(null,"fuzil", "Av. dos tiros","8989898","20/03/2000","fuzilado@gmail.com",328148748),
+(null,"Tony Stark", "rua blabla","09864345","1900","ironman@gmail.com",80809809),
+(null,"Kirito", "beco a","8694769","1998","kikito@gmail.com",76385368),
+(null,"Thomas Turbando Pinto", "laje da favela","1235988","1988","meiomarromba@gggg",869474796);
+
+
+create table funcionario(
+idfuncionario bigint auto_increment,
+nome varchar (50) not null,
+chapa long not null,
+endereço varchar (50) not null,
+telefone int not null,
+cargo varchar (20) not null,
+salario double not null,
+nascimento varchar(10) not null,
+primary key (idfuncionario));
+
+
+insert into funcionario(idfuncionario, nome, chapa,endereço,telefone,cargo,salario,nascimento)
+values(null,"james", 58684,"zequinha",46728937,"fachineiro",2000,"20/05/1997"),
+(null,"Homer", 679476,"bom jesus",7483826,"vendedor",2500,"28/08/1989"),
+(null,"Bartolomeu", 5857368,"cidade de deus",36847357,"gerente",5000,"29/09/1999"),
+(null,"Jubileu", 46836557,"algrave",267488266,"vendedor",2200,"22/12/1987"),
+(null,"josicleia", 36758376,"sarandiru",36678365,"traficante",5000,"1/04/2000");
